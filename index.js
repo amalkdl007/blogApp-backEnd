@@ -1,6 +1,7 @@
 const express = require('express');
 const ArticleInfo = require('./src/model/BlogDB')
 const postRouter = require("./src/routes/postRouter");
+const mongoose = require("mongoose");
 // const cors = require("cors");
 
 const app = express();
