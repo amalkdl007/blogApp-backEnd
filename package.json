@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
         "server": "nodemon server.js",
-        "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
-        "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "develop": "concurrently --kill-others-on-fail \"npm run server\"",
+        "start": "concurrently --kill-others-on-fail \"npm run server\""
   },
   "author": "Amal M",
   "license": "ISC",
