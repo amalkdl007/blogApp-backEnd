@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://amal:nodejs625@cluster0.w8day.mongodb.net/blogApp?retryWrites=true&w=majority');
+// mongoose.connect('');
 // mongoose.connect('mongodb://localhost:27017/blogApp');
 const Schema = mongoose.Schema;
 

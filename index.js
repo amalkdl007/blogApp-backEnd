@@ -5,14 +5,24 @@ const postRouter = require("./src/routes/postRouter");
 
 const app = express();
 
-// const PORT = process.env.PORT || 5001
+const PORT = process.env.PORT || 5001
+
+mongoose.connect(
+            "mongodb+srv://amal:nodejs625@cluster0.w8day.mongodb.net/blogApp?retryWrites=true&w=majority",
+    {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+    }
+)
+            .then(() => console.log("MongoDB has been connected"))
+            .catch((err) => console.log(err));
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 // app.use(cors());
 
 const path = require('path');
-app.use(express.static('./build/'));
+app.use(express.static('./build'));
 app.get('/*', function(req, res) {
         res.sendFile(path.join(__dirname + '/build/index.html'));
 });
@@ -60,6 +70,6 @@ app.post('/api/article/:id/comments', (req, res) => {
 })
 
 // Port number
-app.listen(5001, () => {
-    console.log("Server Listening on port 5001");
+app.listen(PORT, () => {
+    console.log(`Server Listening on port ${PORT}`);
 })
